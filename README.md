@@ -1,75 +1,35 @@
-///////////////////////////////////////////////////////
-//                                                   //
-//                      UPLOAD                       //
-//                                                   //
-///////////////////////////////////////////////////////
 
-// FilerClient.upload(file, 4)
-// .then(response => console.log(response));
+## UPLOAD
 
+`FilerClient.upload(file, 4)`
 
-///////////////////////////////////////////////////////
-//                                                   //
-//                      SERVE                        //
-//                                                   //
-///////////////////////////////////////////////////////
+                                                   
+## SERVE
 
-// FilerClient.serve('bck1:8733e10d-5b1a-4bd1-b8d6-1c9c036323d5');
-
-///////////////////////////////////////////////////////
-//                                                   //
-//                      CREATE UUID                  //
-//                                                   //
-///////////////////////////////////////////////////////
-
-// FilerClient.createUuid(1).then(response => {
-//   console.log(response);
-// });
+`FilerClient.serve('bck1:8733e10d-5b1a-4bd1-b8d6-1c9c036323d5');`
 
 
-///////////////////////////////////////////////////////
-//                                                   //
-//                      GET BINARY                   //
-//                                                   //
-///////////////////////////////////////////////////////
+## CREATE UUID
 
-// file.uuid = 'bck1:ca96701d-3c4c-4ed0-8cac-f3ccfa0efb54';
-// FilerClient.getFileBinary(file).then(response => {
-//   console.log(response);
-// });
+`FilerClient.createUuid(1);`
 
-///////////////////////////////////////////////////////
-//                                                   //
-//                      DELETE (REMOVE)              //
-//                                                   //
-///////////////////////////////////////////////////////
+## GET BINARY
 
-// FilerClient.remove('bck1:ca96701d-3c4c-4ed0-8cac-f3ccfa0efb54', 4)
-// .then(response => console.log(response));
+`FilerClient.getFileBinary(file);`
 
-///////////////////////////////////////////////////////
-//                                                   //
-//                      SEARCH                       //
-//                                                   //
-///////////////////////////////////////////////////////
+## DELETE (REMOVE)
 
-  // FilerClient.search({category: 1, filename: "toto.jpg"})
-  // .then(response => console.log(response));
+`FilerClient.remove('bck1:ca96701d-3c4c-4ed0-8cac-f3ccfa0efb54', 4);`
 
-///////////////////////////////////////////////////////
-//                                                   //
-//                      TRUNCATE                     //
-//                                                   //
-///////////////////////////////////////////////////////
+## SEARCH
 
-// FilerClient.truncate('bck1:ca96701d-3c4c-4ed0-8cac-f3ccfa0efb54', 2)
-// .then(response => console.log(response));
+`FilerClient.search({category: 1, filename: "toto.jpg"});`
 
-///////////////////////////////////////////////////////
-//                                                   //
-//                      RETRIEVE                     //
-//                                                   //
-///////////////////////////////////////////////////////
 
-// FilerClient.retrieve('bck1:ca96701d-3c4c-4ed0-8cac-f3ccfa0efb54')
-// .then(response => console.log(response));
+## TRUNCATE
+
+`FilerClient.truncate('bck1:ca96701d-3c4c-4ed0-8cac-f3ccfa0efb54', 2);`
+
+## RETRIEVE
+
+`FilerClient.retrieve('bck1:ca96701d-3c4c-4ed0-8cac-f3ccfa0efb54');`
