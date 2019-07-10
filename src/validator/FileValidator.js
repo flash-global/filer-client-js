@@ -119,4 +119,4 @@ const validate = file =>
         });
     });
 
-export default validate;
+module.exports = validate;

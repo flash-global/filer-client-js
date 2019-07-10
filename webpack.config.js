@@ -3,7 +3,7 @@ const Encore = require('@symfony/webpack-encore');
 Encore
     .setOutputPath(__dirname + '/dist/')
     .setPublicPath('/dist')
-    .addEntry('filer-client-js', ['whatwg-fetch', './src/index.js'])
+    .addEntry('filer-client-js', ['whatwg-fetch', './src/FilerClient.js'])
     .cleanupOutputBeforeBuild()
     .enableSourceMaps(!Encore.isProduction())
     .disableSingleRuntimeChunk()
