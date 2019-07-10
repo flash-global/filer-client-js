@@ -116,8 +116,7 @@ class File {
 
   toJson() {
       const prototype = Object.getPrototypeOf(this);
-      let properties = Object.getOwnPropertyNames(prototype);
-      properties = properties.filter(name => typeof this[name] !== "function");
+      const properties = Object.getOwnPropertyNames(prototype).filter(name => typeof this[name] !== "function");
 
       const objectToReturn = {};
 
