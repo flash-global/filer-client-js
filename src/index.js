@@ -1,15 +1,5 @@
-import * as FilerClient from './FilerClient.js';
+const FilerClient = require("./FilerClient.js");
 
 global.FilerClient = FilerClient;
 
-export const {
-  File,
-  serve,
-  upload,
-  remove,
-  search,
-  truncate,
-  retrieve,
-  createUuid,
-  getFileBinary,
-} = FilerClient;
+module.exports = FilerClient;

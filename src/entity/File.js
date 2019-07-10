@@ -1,128 +1,134 @@
-import { camelCase } from 'lodash';
+const { camelCase } = require("lodash");
 
 class File {
+  static CATEGORY_LOGO = 1;
+  static CATEGORY_IMG = 2;
+  static CATEGORY_INVOICE = 3;
+  static CATEGORY_CMR = 4;
+  static CATEGORY_MISCELLANEOUS = 5;
+  static CATEGORY_SINISTRE = 6;
+  static CATEGORY_MAIL = 7;
+  static CATEGORY_EDI = 8;
+  static CATEGORY_REIMBURSEMENT = 9;
+  static CATEGORY_SUPPLIER = 10;
+  static CATEGORY_CLIENT = 11;
+  static CATEGORY_INVOICE_TEMP = 12;
+  static CATEGORY_CREDIT_NOTE = 13;
+  static CATEGORY_GLOBAL_INVOICE = 14;
+  static CATEGORY_GLOBAL_INVOICE_TEMP = 15;
+  static CATEGORY_INVOICE_INTERFACE = 16;
+
+  static FORCE_INLINE = 0;
+  static FORCE_DOWNLOAD = 1;
+  static ASYNC_UPLOAD = 2;
+  static NEW_REVISION = 4;
+
+  #id;
+  #uuid;
+  #filename;
+  #revision;
+  #category;
+  #createdAt;
+  #contentType;
+  #data;
+  #contexts;
+
   constructor(args = {}) {
-    this._contexts = [];
-    this._revision = 1;
+      this.#contexts = [];
+      this.#revision = 1;
 
-    Object.keys(args).map((key) => {
-      this[camelCase(key)] = args[key];
-
-      return null;
-    });
+      Object.keys(args).forEach(key => {
+          this[camelCase(key)] = args[key];
+      });
   }
 
   get id() {
-    return this._id;
+      return this.#id;
   }
 
   set id(id) {
-    this._id = id;
+      this.#id = id;
   }
 
   get uuid() {
-    return this._uuid;
+      return this.#uuid;
   }
 
   set uuid(uuid) {
-    this._uuid = uuid;
+      this.#uuid = uuid;
   }
 
   get filename() {
-    return this._filename;
+      return this.#filename;
   }
 
   set filename(filename) {
-    this._filename = filename;
+      this.#filename = filename;
   }
 
   get revision() {
-    return this._revision;
+      return this.#revision;
   }
 
   set revision(rev) {
-    this._revision = rev;
+      this.#revision = rev;
   }
 
   get category() {
-    return this._category;
+      return this.#category;
   }
 
   set category(category) {
-    this._category = category;
+      this.#category = category;
   }
 
   get createdAt() {
-    return this._createdAt;
+      return this.#createdAt;
   }
 
   set createdAt(createdAt) {
-    this._createdAt = createdAt;
+      this.#createdAt = createdAt;
   }
 
   get contentType() {
-    return this._contentType;
+      return this.#contentType;
   }
 
   set contentType(contentType) {
-    this._contentType = contentType;
+      this.#contentType = contentType;
   }
 
   get data() {
-    return this._data;
+      return this.#data;
   }
 
   set data(data) {
-    this._data = data;
+      this.#data = data;
   }
 
   get contexts() {
-    return this._contexts;
+      return this.#contexts;
   }
 
   set contexts(context) {
-    this._contexts = context;
+      this.#contexts = context;
   }
 
   toJson() {
-    const prototype = Object.getPrototypeOf(this);
-    let properties = Object.getOwnPropertyNames(prototype);
-    properties = properties.filter(name => typeof this[name] !== 'function');
+      const prototype = Object.getPrototypeOf(this);
+      let properties = Object.getOwnPropertyNames(prototype);
+      properties = properties.filter(name => typeof this[name] !== "function");
 
-    const objectToReturn = {};
+      const objectToReturn = {};
 
-    Object
-      .values(properties)
-      .map(property => {
-        objectToReturn[property] = this[property];
+      Object.values(properties).map(property => {
+          objectToReturn[property] = this[property];
 
-        return null;
+          return null;
       });
 
       return objectToReturn;
   }
 }
 
-File.CATEGORY_LOGO = 1;
-File.CATEGORY_IMG = 2;
-File.CATEGORY_INVOICE = 3;
-File.CATEGORY_CMR = 4;
-File.CATEGORY_MISCELLANEOUS = 5;
-File.CATEGORY_SINISTRE = 6;
-File.CATEGORY_MAIL = 7;
-File.CATEGORY_EDI = 8;
-File.CATEGORY_REIMBURSEMENT = 9;
-File.CATEGORY_SUPPLIER = 10;
-File.CATEGORY_CLIENT = 11;
-File.CATEGORY_INVOICE_TEMP = 12;
-File.CATEGORY_CREDIT_NOTE = 13;
-File.CATEGORY_GLOBAL_INVOICE = 14;
-File.CATEGORY_GLOBAL_INVOICE_TEMP = 15;
-File.CATEGORY_INVOICE_INTERFACE = 16;
-
-File.ASYNC_UPLOAD = 2;
-File.NEW_REVISION = 4;
-File.FORCE_DOWNLOAD = 1;
-File.FORCE_INLINE = 0;
-
-export default File;
+module.exports = File;

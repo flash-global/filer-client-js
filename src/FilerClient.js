@@ -1,24 +1,23 @@
+const configureLib = require("../lib/configure");
+const FilerEntity = require("../src/entity/File");
 
-import configureLib from '../lib/configure';
-import FilerEntity from '../src/entity/File';
+const uploadLib = require("../lib/upload");
+const retrieveLib = require("../lib/retrieve");
+const deleteLib = require("../lib/delete");
+const truncateLib = require("../lib/truncate");
+const serveLib = require("../lib/serve");
+const createUuidLib = require("../lib/createUuid");
+const getFileBinaryLib = require("../lib/getFileBinary");
+const searchLib = require("../lib/search");
 
-import uploadLib from '../lib/upload';
-import retrieveLib from '../lib/retrieve';
-import deleteLib from '../lib/delete';
-import truncateLib from '../lib/truncate';
-import serveLib from '../lib/serve';
-import createUuidLib from '../lib/createUuid';
-import getFileBinaryLib from '../lib/getFileBinary';
-import searchLib from '../lib/search';
+exports.configure = configureLib;
+exports.File = FilerEntity;
 
-export const configure = configureLib;
-export const File = FilerEntity;
-
-export const upload = uploadLib;
-export const retrieve = retrieveLib;
-export const remove = deleteLib;
-export const truncate = truncateLib;
-export const serve = serveLib;
-export const createUuid = createUuidLib;
-export const getFileBinary = getFileBinaryLib;
-export const search = searchLib;
+exports.upload = uploadLib;
+exports.retrieve = retrieveLib;
+exports.remove = deleteLib;
+exports.truncate = truncateLib;
+exports.serve = serveLib;
+exports.createUuid = createUuidLib;
+exports.getFileBinary = getFileBinaryLib;
+exports.search = searchLib;
