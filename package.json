@@ -26,10 +26,12 @@
   "scripts": {
     "dev": "yarn encore dev --watch",
     "build": "yarn encore production",
-    "eslint": "eslint ."
+    "eslint": "eslint .",
+    "test": "jest"
   },
   "dependencies": {
     "file-reader": "^1.1.1",
+    "jest": "^24.8.0",
     "lodash": "^4.17.11"
   }
 }

@@ -4,7 +4,8 @@
       "targets": {
         "browsers": ">= 0%"
       },
-      "useBuiltIns": "usage"
+      "useBuiltIns": "usage",
+      "corejs": "2"
     }]
   ],
   "plugins": [

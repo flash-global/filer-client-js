@@ -1,5 +1,3 @@
-const { camelCase } = require("lodash");
-
 class File {
   static CATEGORY_LOGO = 1;
   static CATEGORY_IMG = 2;
@@ -37,9 +35,11 @@ class File {
       this.#contexts = [];
       this.#revision = 1;
 
-      Object.keys(args).forEach(key => {
-          this[camelCase(key)] = args[key];
-      });
+      ["id", "uuid", "filename", "revision", "category", "createdAt", "contentType", "data", "contexts"].forEach((attributeName) => {
+          if (attributeName in args) {
+              this[attributeName] = args[attributeName];
+          }
+      })
   }
 
   get id() {
