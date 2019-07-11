@@ -46,7 +46,7 @@ it("Reject because error while sending request", () => {
 
     configure({url: urlFixture});
 
-    return expect(createUuid(categoryFixture)).rejects.toBe("Error").then(() => {
+    return expect(createUuid(categoryFixture)).rejects.toEqual("Error").then(() => {
         expect(global.fetch.mock.calls.length).toEqual(1);
         expect(global.fetch.mock.calls[0][0]).toEqual(`http://filer-api.local/api/files/uuid?category=${categoryFixture}`);
         expect(global.fetch.mock.calls[0][1]).toEqual(
