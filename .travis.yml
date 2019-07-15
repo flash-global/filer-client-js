@@ -16,7 +16,7 @@ script:
   - yarn test
 
 before_deploy:
-  - npm --no-git-tag-version version $TRAVIS_TAG
+  - npm --no-git-tag-version --allow-same-version version $TRAVIS_TAG
   - yarn build
   - rm .travis.yml
 
