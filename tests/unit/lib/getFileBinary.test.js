@@ -9,7 +9,7 @@ it("Throw error because there is not configuration", () => {
 });
 
 it("Reject because response not ok", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const fileFixture = new File();
 
     const responseFixture = new Response();
@@ -32,7 +32,7 @@ it("Reject because response not ok", () => {
 });
 
 it("Reject because error while sending request", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const fileFixture = new File();
 
     const promiseFetchFixture = new Promise((_, reject) => reject("Error"));
@@ -53,7 +53,7 @@ it("Reject because error while sending request", () => {
 });
 
 it("Resolve", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const fileFixture = new File();
 
     const responseFixture = new Response('hello');

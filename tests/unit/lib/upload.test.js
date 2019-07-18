@@ -9,7 +9,7 @@ it("Throw error because there is not configuration", () => {
 });
 
 it("Throw error because required uuid is null", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const fileFixture = new File({uuid: null});
 
     configure({url: urlFixture});
@@ -18,7 +18,7 @@ it("Throw error because required uuid is null", () => {
 });
 
 it("Reject because validation", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const fileFixture = new File();
     const errorsFixture = {
         category: "The category cannot be empty",
@@ -34,7 +34,7 @@ it("Reject because validation", () => {
 });
 
 it("Reject because response not ok", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const fileFixture = new File({
         category: 1,
         contentType: 'txt',
@@ -59,7 +59,7 @@ it("Reject because response not ok", () => {
         expect(global.fetch.mock.calls[0][1]).toEqual({
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encodeURIComponent(`file=${JSON.stringify(fileFixture.toJson())}`),
+            body: `file=${JSON.stringify(fileFixture.toJson())}`,
         });
 
         delete configs.url;
@@ -67,7 +67,7 @@ it("Reject because response not ok", () => {
 });
 
 it("Reject because error while sending request", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const fileFixture = new File({
         category: 1,
         contentType: 'txt',
@@ -89,7 +89,7 @@ it("Reject because error while sending request", () => {
         expect(global.fetch.mock.calls[0][1]).toEqual({
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encodeURIComponent(`file=${JSON.stringify(fileFixture.toJson())}`),
+            body: `file=${JSON.stringify(fileFixture.toJson())}`,
         });
 
         delete configs.url;
@@ -97,7 +97,7 @@ it("Reject because error while sending request", () => {
 });
 
 it("Resolve POST", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const responseDataFixture = {uuid: 'f5b004a8-a9f1-463a-afe0-e55aa746d203'};
     const fileFixture = new File({
         category: 1,
@@ -121,7 +121,7 @@ it("Resolve POST", () => {
         expect(global.fetch.mock.calls[0][1]).toEqual({
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encodeURIComponent(`file=${JSON.stringify(fileFixture.toJson())}`),
+            body: `file=${JSON.stringify(fileFixture.toJson())}`,
         });
 
         delete configs.url;
@@ -129,7 +129,7 @@ it("Resolve POST", () => {
 });
 
 it("Resolve PUT", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const responseDataFixture = {uuid: 'f5b004a8-a9f1-463a-afe0-e55aa746d203'};
     const fileFixture = new File({
         category: 1,
@@ -154,7 +154,7 @@ it("Resolve PUT", () => {
         expect(global.fetch.mock.calls[0][1]).toEqual({
             method: 'PUT',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encodeURIComponent(`file=${JSON.stringify(fileFixture.toJson())}`),
+            body: `file=${JSON.stringify(fileFixture.toJson())}`,
         });
 
         delete configs.url;

@@ -8,7 +8,7 @@ it("Throw error because there is not configuration", () => {
 });
 
 it("Reject because response not ok", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const uuidFixture = '6a60a3ed-1304-4797-9a08-3ee1400099a3';
 
     const responseFixture = new Response();
@@ -31,7 +31,7 @@ it("Reject because response not ok", () => {
 });
 
 it("Reject because error while sending request", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const uuidFixture = '6a60a3ed-1304-4797-9a08-3ee1400099a3';
 
     const promiseFetchFixture = new Promise((_, reject) => reject("Error"));
@@ -51,7 +51,7 @@ it("Reject because error while sending request", () => {
 });
 
 it("Resolve without revision", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const uuidFixture = '6a60a3ed-1304-4797-9a08-3ee1400099a3';
     const uuidResultFixture = { uuid: 'f5b004a8-a9f1-463a-afe0-e55aa746d203' };
 
@@ -73,7 +73,7 @@ it("Resolve without revision", () => {
 });
 
 it("Resolve with revision", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const uuidFixture = '6a60a3ed-1304-4797-9a08-3ee1400099a3';
     const revisionFixture = 2;
     const uuidResultFixture = { uuid: 'f5b004a8-a9f1-463a-afe0-e55aa746d203' };
