@@ -1,9 +1,9 @@
 {
   "name": "filer-client-js",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Filer client for JavaScript apps",
   "main": "src/FilerClient.js",
-  "repository": "git@github.com:flash-global/chat-client-js.git",
+  "repository": "git@github.com:flash-global/filer-client-js.git",
   "author": "Boris Cerati <contact@boris-cerati.fr>",
   "license": "GPL-3.0",
   "private": false,
