@@ -8,7 +8,7 @@ it("Throw error because there is not configuration", () => {
 });
 
 it("Reject because response not ok", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const categoryFixture = File.CATEGORY_CMR;
 
     const responseFixture = new Response();
@@ -36,7 +36,7 @@ it("Reject because response not ok", () => {
 });
 
 it("Reject because error while sending request", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const categoryFixture = File.CATEGORY_CMR;
 
     const promiseFetchFixture = new Promise((_, reject) => reject("Error"));
@@ -61,7 +61,7 @@ it("Reject because error while sending request", () => {
 });
 
 it("Resolve", () => {
-    const urlFixture = 'http://filer-api.local/api/files';
+    const urlFixture = 'http://filer-api.local';
     const categoryFixture = File.CATEGORY_CMR;
     const uuidResultFixture = { uuid: 'f5b004a8-a9f1-463a-afe0-e55aa746d203' };
 
