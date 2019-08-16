@@ -59,7 +59,7 @@ it("Reject because response not ok", () => {
         expect(global.fetch.mock.calls[0][1]).toEqual({
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `file=${JSON.stringify(fileFixture.toJson())}`,
+            body: `file=${encodeURIComponent(JSON.stringify(fileFixture.toJson()))}`,
         });
 
         delete configs.url;
@@ -89,7 +89,7 @@ it("Reject because error while sending request", () => {
         expect(global.fetch.mock.calls[0][1]).toEqual({
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `file=${JSON.stringify(fileFixture.toJson())}`,
+            body: `file=${encodeURIComponent(JSON.stringify(fileFixture.toJson()))}`,
         });
 
         delete configs.url;
@@ -121,7 +121,7 @@ it("Resolve POST", () => {
         expect(global.fetch.mock.calls[0][1]).toEqual({
             method: 'POST',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `file=${JSON.stringify(fileFixture.toJson())}`,
+            body: `file=${encodeURIComponent(JSON.stringify(fileFixture.toJson()))}`,
         });
 
         delete configs.url;
@@ -154,7 +154,7 @@ it("Resolve PUT", () => {
         expect(global.fetch.mock.calls[0][1]).toEqual({
             method: 'PUT',
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `file=${JSON.stringify(fileFixture.toJson())}`,
+            body: `file=${encodeURIComponent(JSON.stringify(fileFixture.toJson()))}`,
         });
 
         delete configs.url;
