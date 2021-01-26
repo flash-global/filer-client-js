@@ -24,8 +24,8 @@
     "whatwg-fetch": "^3.5.0"
   },
   "scripts": {
-    "dev": "yarn encore dev --watch",
-    "build": "yarn encore production",
+    "dev": "encore dev --watch",
+    "build": "encore production",
     "eslint": "eslint .",
     "test": "jest"
   },
